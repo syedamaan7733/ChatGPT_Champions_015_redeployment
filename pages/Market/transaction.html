@@ -191,29 +191,76 @@ header{
 }
 
 
+.head-wrapper{
+    display: flex;
+    box-sizing: border-box;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 4em 2em 2em;
+}
+.head-wrapper h1{
+    font-size: 3em;
+    color: whitesmoke;
+}
+.head-wrapper h1 span 
+    {
+        background: rgb(63,13,240);
+        font-size: 1.3em;
+        background: linear-gradient(90deg, rgba(63,13,240,1) 0%, rgba(131,1,211,1) 100%);
+        -webkit-background-clip: text;
+        color: transparent; 
+    }
 
-
+.search-opt .border{
+    border: 1px rgb(155, 155, 173) solid;
+    border-radius: 20px;
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+    gap: 1em;
+    padding: .3em;
+}
+.search-opt label{
+    font-size: 1.4em;
+    background-color: rgb(87, 87, 97);
+    padding: .3em;
+    text-align:center;
+    border-radius: 20px;
+}
+.search-opt input{
+    background-color: transparent;
+    text-align: left;
+    border: none;
+    width: 100%;
+}
 
 
 
 
 #transaction-container {
-            background-color: white;
+            background-color:rgb(53, 53, 59);
             width: 70%;
             margin: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            color: black;
             min-height: 70%;
             max-height: 1000px;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            
         }
 
         h1 {
             text-align: center;
             font-size: 1.5rem;
+            padding-top: 1em;
             margin-bottom: 20px;
-            color: #333;
+            color:white;
         }
 
         /* Styling for each transaction */
@@ -222,7 +269,9 @@ header{
             padding: 0;
             margin: 0;
         }
-
+        #transaction-list{
+            overflow-y: scroll;
+        }
         .transaction-row {
             display: flex;
             flex-direction: row;
@@ -258,8 +307,14 @@ header{
             box-sizing: border-box;
             width: 100%;
             padding: 1em;
+
         }
 
+.amont-d{
+    text-align: right;
+    font-weight: 500;
+}
+            
         @media(max-width:1000px){
     .burger{
         display: block;
@@ -273,12 +328,15 @@ header{
     #transaction-container{
         width: 92%;
     }
+    .head-wrapper{
+        width: 92%;
+    }
 }
 
 
 
 
-        @media(max-width: 768px) {
+@media(max-width: 768px) {
     .footer-container {
         flex-direction: column;
         align-items: flex-start;
@@ -287,8 +345,13 @@ header{
         flex-direction: column;
         align-items: flex-start;
     }
+    .head-wrapper{
+        font-size: .9em;
+        padding: 1em 1em;
+    }
 
 }
+
 
 
 
@@ -324,7 +387,21 @@ header{
     </div>
     </nav>
 </header>
+
+    <div class="head">
+        <div class="head-wrapper">
+            <h1>Track your transaction in the <br> <span>Blockchain</span>. </h1>
+        </div>
+    </div>
     <div id="transaction-container">
+        <div class="search-opt">
+            <div class="border">
+            <input type="text" name="search" id="search" placeholder="Enter your hash here.....">
+            <label for="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </label>
+        </div>
+        </div>
         <h1>Latest Transactions</h1>
         <ul id="transaction-list">
             <!-- Transactions will be dynamically added here -->
@@ -410,7 +487,7 @@ header{
                 <span class="addr-time"><span><strong>Address:</strong> ${address}</span>
                     <span><strong>Date/Time:</strong> ${time}</span></span>
                 
-                <span><strong>Amount:</strong> ${amount} BTC</span>
+                <span class ="amont-d"><strong>Amount: <br></strong> ${amount} BTC</span>
             `;
 
             // Insert the row at the top

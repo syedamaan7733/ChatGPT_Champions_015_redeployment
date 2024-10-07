@@ -365,8 +365,8 @@ function updatePrice(coinSymbol, price) {
   const priceElement = document.querySelector(`${coinSymbol}`);
 
   // Check if price increased or decreased to apply the animation
-  const previousPrice = parseFloat(priceElement.innerText);
-  priceElement.innerText = price.toFixed(2);
+  const previousPrice = parseFloat(priceElement.innerText.substring(1));
+  priceElement.innerText = `$${price.toFixed(2)}`;
 
   if (price > previousPrice) {
     // Apply green animation for price rise

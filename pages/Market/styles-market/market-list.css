@@ -479,6 +479,8 @@ padding: .1em .5em;
 /* --------------------------------- */
 /* ----------Table List --------------- */
 /* --------------------------------------- */
+
+
 .list-body td{
     padding: .5em .3em;
     border-bottom: 1px solid gray;
@@ -549,11 +551,13 @@ padding: .1em .5em;
     font-size: 15px;
     font-family: "popppins";
     width: 70%;
+    overflow-x: hidden;
     margin: auto;
     margin-top: 1em;
     box-sizing: border-box;
     padding: .3em;
 }
+
 
 .fade-up {
     transform: translateY(20px);
@@ -877,6 +881,9 @@ header{
     .coin-chart,
     .price-wrapper table thead tr th:last-child{
         display: none;
+    }
+    .price-wrapper{
+        width: 90%;
     }
 }
 
