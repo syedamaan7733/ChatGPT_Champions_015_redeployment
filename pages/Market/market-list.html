@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles-market/market-list.css">
+    <!-- utills -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/90b32dcee6.js" crossorigin="anonymous"></script>
+    <title>Trending Market</title>
+</head>
+<body>
+  <!--  nav bar -->
+  <header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#" class="active"><img src="./logo.jpg" alt="logo"><span>CryptoFI</span></a>
+        </div>
+        <ul class="menu">
+            <li>
+                <a href="/index.html">Homepage</a>
+            </li>
+            <li>
+                <a href="/pages/BuyCrypto.html">Buy / Sell Crypto</a>
+            </li>
+            <li>
+                <a href="/pages/Market/market-list.html">Markets</a>
+            </li>
+            <li>
+                <a href="/portfolio/portfolio.html">Portfolio</a>
+            </li>
+            <li>
+                <a href="/blog/ft36_351day2/blog.html">Blog</a>
+            </li>
+        </ul>
+        <div class="burger-login-wrap">
+        <a href="/pages/login.html" class="login-btn">Log In / Sign In</a>
+        <a class="burger" href="#"><i class="fa-solid fa-bars"></i></a>
+    </div>
+    </nav>
+</header>
+
+  <!-- global market overview -->
+    <header class="global-mkt vanish">
+      <!-- Global Market Overview -->
+        <div class="global-mkt-wrapper">
+            <ul>
+                <li><span>Crypto:</span><a href="#">--M+</a></li>
+                <li><span>Exchanges:</span><a href="#">--</a></li>
+                <li><span>Market Cap:</span><a href="#">$--</a><p><i class="fa-solid fa-sort-down"></i> 3.41%</p></li>
+                <li><span>24th Vol:</span><a href="#">$--</a><p><i class="fa-solid fa-sort-up"></i> 40.20%</p></li>
+                <li><span>Dominance:</span><a id="dom-btc" href="#">--%</a><a id="dom-eth" href="#">--%</a></li>
+                <li><span><i class="fa-solid fa-gas-pump"></i>ETH Gas:</span><a href="#">5.46 Gwel</a></li>
+                <li><span>Fear & Greed: </span><a href="#">--/100</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Get listed <i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="#">API</a></li>
+            </ul>
+        </div>
+    
+    </header>
+  
+  <!-- Market Head -->
+    <section class="head-desc vanish">
+        <!-- Global Market Overview -->
+      <div class="head-desc-wrapper">
+        <h1>Today's <span>Cryptocurrency</span> Prices by Market Cap</h1>
+        <p>The global crypto market cap is <span style="font-weight: 700;">--</span>, a <span>--%</span> <span>NA</span> over the last day. <a href="#">Read More</a></p>
+      </div>
+    </section>
+
+  <!-- Slider Cards -->
+   <section class="slide-card">
+    <div class="slide-card-wrapper">
+      <div class="slider-container">
+        <!-- First Slider -->
+        <div class="slider-wrapper">
+          <div class="slider" id="slider1">
+            <div class="slide">
+              <ul>
+                <li><p><span>🔥</span>Trending</p></li>
+                <li><a href="#">More <i class="fa-solid fa-angle-right"></i></a></li> 
+              </ul>
+              <ul>
+                <li>
+                  <img  src="https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png" alt="">
+                  <p>Hamster</p>
+                  <span>HMS</span>
+                </li>
+                <li style=" color: rgb(2, 192, 2);">
+                  <i class="fa-solid fa-sort-up"></i>
+                  <p>0.33%</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <img  src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="">
+                  <p>Bitcoin</p>
+                  <span>BTC</span>
+                </li>
+                <li style=" color: rgb(2, 192, 2);">
+                  <i class="fa-solid fa-sort-up"></i>
+                  <p>0.07%</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <img  src="https://s2.coinmarketcap.com/static/img/coins/64x64/32383.png" alt="">
+                  <p>Lunar </p>
+                  <span>LUNAR</span>
+                </li>
+                <li style=" color: rgb(2, 192, 2);">
+                  <i class="fa-solid fa-sort-up"></i>
+                  <p>3.81%</p>
+                </li>
+              </ul>
+            </div>
+            <div class="slide">
+              <ul>
+                <li><p><span><i class="fa-solid fa-clock-rotate-left"></i></span>Recently Added</p></li>
+                <li><a href="#">More <i class="fa-solid fa-angle-right"></i></a></li> 
+              </ul>
+              <ul>
+                <li>
+                  <img  src="https://s2.coinmarketcap.com/static/img/coins/64x64/33316.png" alt="">
+                  <p>LenS.</p>
+                  <span>LEN</span>
+                </li>
+                <li>
+                  
+                  <p>$0.000000036</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <img  src="https://s2.coinmarketcap.com/static/img/coins/64x64/33315.png" alt="">
+                  <p>Aventa</p>
+                  <span>AVENT</span>
+                </li>
+                <li>
+                  <p>$0.00004598</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <img  src="https://s2.coinmarketcap.com/static/img/coins/64x64/33314.png" alt="">
+                  <p>Trump 47</p>
+                  <span>TF47</span>
+                </li>
+                <li>
+                  
+                  <p>$0.0086</p>
+                </li>
+              </ul>
+            </div>
+            <div class="slide">
+              <ul>
+                <li><p><span><i class="fa-regular fa-eye"></i></span>Most Visited</p></li>
+                <li><a href="#">More <i class="fa-solid fa-angle-right"></i></a></li> 
+              </ul>
+              <ul>
+                <li>
+                  <img  src="https://s2.coinmarketcap.com/static/img/coins/64x64/6536.png" alt="">
+                  <p>MANTRA</p>
+                  <span>OM</span>
+                </li>
+                <li style="color: red;">
+                  <i  class="fa-solid fa-sort-down"></i>
+                  <p>2.40%</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <img  src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="">
+                  <p>Bitcoin</p>
+                  <span>BTC</span>
+                </li>
+                <li style="color: rgb(2, 192, 2);">
+                  <i class="fa-solid fa-sort-up"></i>
+                  <p>0.11%</p>
+                </li>
+              </ul>
+              <ul>
+                <li >
+                  <img  src="https://s2.coinmarketcap.com/static/img/coins/64x64/19055.png" alt="">
+                  <p>Solidus</p>
+                  <span>AITH</span>
+                </li>
+                <li style="color: red;">
+                  <i class="fa-solid fa-sort-down"></i>
+                  <p>2.18%</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="indicators" id="indicators1">
+            <span class="dot" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+          </div>
+        </div>
+      
+        <!-- Second Slider -->
+        <div class="slider-wrapper">
+          <div class="slider" id="slider2">
+            <div class="slide" id="slide11">
+              <blockquote class="twitter-tweet" data-cards="hidden" data-theme="dark"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/SUNCAT?src=hash&amp;ref_src=twsrc%5Etfw">#SUNCAT</a> is up almost 45% today, and is the only top mover on <a href="https://twitter.com/sunpumpmeme?ref_src=twsrc%5Etfw">@sunpumpmeme</a> that has a market cap over $211k (currently $3.57M)!<br><br>Feels like a huge V shape recovery is coming for SUNCAT! 🚀🌞🐈 <a href="https://t.co/XfjFtSA76v">pic.twitter.com/XfjFtSA76v</a></p>&mdash; SUNCAT CTO ☀️🐈 (@SUNCATWhales) <a href="https://twitter.com/SUNCATWhales/status/1842573370900234721?ref_src=twsrc%5Etfw">October 5, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="slide">
+              <blockquote class="twitter-tweet" data-cards="hidden" data-theme="dark"><p lang="en" dir="ltr"><a href="https://twitter.com/search?q=%24SUNCAT&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$SUNCAT</a> has turned green for the day after an amazing reversal! The community is coming together to back the new community take-over (CTO) and we have some huge news coming soon that will even further legitimize the NEW CTO as the REAL CTO 💪Are you ready for $100M?🚀🌞🐈 <a href="https://t.co/ZxibjVQfxL">pic.twitter.com/ZxibjVQfxL</a></p>&mdash; Intuit Φ (@Intuit_Trading) <a href="https://twitter.com/Intuit_Trading/status/1842298380233670670?ref_src=twsrc%5Etfw">October 4, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="slide">
+              <blockquote class="twitter-tweet" data-cards="hidden" data-theme="dark"><p lang="en" dir="ltr">🚀 The moon is for amateurs… **Yalla Sun** is aiming straight for the SUN! 🌞 Join the movement where the community reigns and <a href="https://twitter.com/search?q=%24YSU&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$YSU</a> burns brighter every day. 🔥 <a href="https://twitter.com/hashtag/Crypto?src=hash&amp;ref_src=twsrc%5Etfw">#Crypto</a> <a href="https://twitter.com/hashtag/MemeCoin?src=hash&amp;ref_src=twsrc%5Etfw">#MemeCoin</a> <a href="https://twitter.com/hashtag/TRX?src=hash&amp;ref_src=twsrc%5Etfw">#TRX</a> <a href="https://twitter.com/hashtag/YSU?src=hash&amp;ref_src=twsrc%5Etfw">#YSU</a> <a href="https://twitter.com/hashtag/Web3?src=hash&amp;ref_src=twsrc%5Etfw">#Web3</a> <a href="https://t.co/f447SQHIAE">pic.twitter.com/f447SQHIAE</a></p>&mdash; الـكابـتن ⚓️ (@Cap_306) <a href="https://twitter.com/Cap_306/status/1835406368490054102?ref_src=twsrc%5Etfw">September 15, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+          </div>
+          <div class="indicators" id="indicators2">
+            <span class="dot" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="launch-div">
+          <p>Launch Soon🚀</p>
+          <a href="#">know more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="count-down-wrap">
+          <p>Get Ready for <br> <span>Royal Finance Coin (RFC)</span></p>
+        <div id="countdown"></div>
+        </div>
+      </div>
+    </div>
+   </section>
+
+   <!-- Category list -->
+    <section class="category">
+      <div class="category-wrap">
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-squarespace"></i> All</a></li>
+          <li><a href="#"><i class="fa-solid fa-circle-half-stroke"></i> NFTs</a></li>
+          <li><a href="#"><i class="fa-solid fa-list"></i> Categories</a></li>
+          <li><a href="#"><i class="fa-solid fa-unlock"></i> Token unlocks</a></li>
+          <li><a href="#">🔥 Memes</a></li>
+          <li><a href="#">🔥 Solana Eco</a></li>
+          <li><a href="#">🔥 AI</a></li>
+          <li><a href="#">🔥 Gamming</a></li>
+          <li><a href="#">🔥 RWA</a></li>
+          <li><a href="#">🔥 DePIN</a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-sliders"></i> Filters</a></li>
+          <li><a href="#"><i class="fa-brands fa-intercom"></i> Customize</a></li>
+          <li><input type="text" placeholder="seach your crypto"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+          <li>
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-dice-four"></i>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  <!-- price list -->
+   <section class="price-list">
+    <div class="price-wrapper">
+      <table>
+        <colgroup>
+          <col>
+          <col style="width: 50px; min-width: auto; max-width: auto;">
+          <col style="width: 250px; min-width: auto; max-width: auto;">
+          <col>
+          <col style="width: 84px; min-width: auto; max-width: auto;">
+          <col style="width: 84px; min-width: auto; max-width: auto;">
+          <col style="width: 84px; min-width: auto; max-width: auto;">
+          <col style="width: 200px; min-width: auto; max-width: auto;">
+          <col style="width: 200px; min-width: auto; max-width: auto;">
+          <col style="width: 200px; min-width: auto; max-width: auto;">
+          <col>
+        </colgroup>
+        <thead style="overflow: hidden;  width: 100%; ">
+          <tr>
+            <th class="sticky-top"></th>
+            <th class="sticky-top" style="text-align: center;">
+              <p>#</p>
+            </th>
+            <th class="sticky-top" style="text-align: start;">
+              <div class="tab-content">
+                <p>Name</p>
+              </div>
+            </th>
+            <th class="sticky-top" style="text-align: end;">
+              <div class="tab-content">
+                <p>Price</p>
+              </div>
+            </th>
+            <th class="sticky-top" style="text-align: end;">
+              <div class="tab-content">
+                <p>1h %</p>
+              </div>
+            </th>
+            <th class="sticky-top" style="text-align: end;">
+              <div class="tab-content">
+                <p>24h %</p>
+              </div>
+            </th>
+            <th class="sticky-top" style="text-align: end;">
+              <div class="tab-content">
+                <p>7d %</p>
+              </div>
+            </th>
+            <th class="sticky-top" style="text-align: end;">
+              <div class="tab-content">
+                <p>Market Cap</p>
+              </div>
+            </th>
+            <th class="sticky-top" style="text-align: end;">
+              <div class="tab-content">
+                <p>Volume(24h)</p>
+              </div>
+            </th>
+            <th class="sticky-top" style="text-align: end;">
+              <div class="tab-content">
+                <p>Circulating Supply</p>
+              </div>
+            </th>
+            <th class="sticky-top" style="text-align: end;">
+              <div class="tab-content">
+                <p>Last 7 Days</p>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="list-body">
+          <!-- <tr style="cursor: pointer;">
+            <td>
+              <i class="fa-regular fa-star"></i>
+            </td>
+            <td class="coin-rank" style="text-align: center;">
+              <p>1</p>
+            </td>
+            <td class="coin-name" style="text-align: start;">
+              <a style="display: flex;" href="#">
+                <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="">
+                <p>Bitcoin</p>
+                <p>BTC</p>
+              </a>
+            </td>
+            <td style="text-align: end;">
+              <span>$61,144.33</span>
+            </td>
+            <td style="text-align: end;">
+              <span><i class="fa-solid fa-sort-up"></i> 0.07%</span>
+            </td>
+            <td style="text-align: end;">
+              <span><i class="fa-solid fa-sort-up"></i> 0.07%</span>
+            </td>
+            <td style="text-align: end;">
+              <span><i class="fa-solid fa-sort-up"></i> 0.07%</span>
+            </td>
+            <td style="text-align: end;">
+              <span>$1,209,211,666</span>
+            </td>
+            <td style="text-align: end;">
+              <p>$34,791,546,543</p>
+              <p>568,662 BTC</p>
+            </td>
+            <td style="text-align: end;">
+              <p>19,762,690 BTC</p>
+            </td>
+            <td style="text-align: end;">
+              <img src="https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1.svg" alt="">
+            </td>
+          </tr>
+          <tr style="cursor: pointer;">
+            <td>
+              <i class="fa-regular fa-star"></i>
+            </td>
+            <td class="coin-rank" style="text-align: center;">
+              <p>1</p>
+            </td>
+            <td class="coin-name" style="text-align: start;">
+              <a style="display: flex;" href="#">
+                <img class="coin-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="">
+                <p>Bitcoin</p>
+                <p>BTC</p>
+              </a>
+            </td>
+            <td style="text-align: end;">
+              <span>$61,144.33</span>
+            </td>
+            <td style="text-align: end;">
+              <span><i class="fa-solid fa-sort-up"></i> 0.07%</span>
+            </td>
+            <td style="text-align: end;">
+              <span><i class="fa-solid fa-sort-up"></i> 0.07%</span>
+            </td>
+            <td style="text-align: end;">
+              <span><i class="fa-solid fa-sort-up"></i> 0.07%</span>
+            </td>
+            <td style="text-align: end;">
+              <span>$1,209,211,666</span>
+            </td>
+            <td style="text-align: end;">
+              <p>$34,791,546,543</p>
+              <p>568,662 BTC</p>
+            </td>
+            <td style="text-align: end;">
+              <p>19,762,690 BTC</p>
+            </td>
+            <td style="text-align: end;">
+              <img src="https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1.svg" alt="">
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+      <div class="table-toggle">
+        <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+        <a href="#"><span>1</span></a>
+        <a href="#"><span>2</span></a>
+        <a href="#"><span>.</span></a>
+        <a href="#"><span>89</span></a>
+        <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+      </div>
+    </div>
+   </section>
+   <footer>
+    <div class="footer-container">
+        <div class="footer-section company">
+            <img src="./BuySell_Images/logo.svg" alt="CryptoFI Logo">
+            <h3>CryptoFI</h3>
+            <p>Let's talk! <span>👍</span></p>
+            <p>+12 345 678 9101</p>
+            <p>hello.cryptoFI@gmail.com</p>
+            <p>Cecilia Chapman 711-2880 Nulla St. Bangalore <br>Bangalore 96522</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>PRODUCTS</h4>
+            <p>Spot</p>
+            <p>Inverse Perpetual</p>
+            <p>USDT Perpetual</p>
+            <p>Exchange</p>
+            <p>Launchpad</p>
+            <p>Binance Pay</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>SERVICES</h4>
+            <p>Buy Crypto</p>
+            <p>Markets</p>
+            <p>Tranding Fee</p>
+            <p>Affiliate Program</p>
+            <p>Referral Program</p>
+            <p>API</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>SUPPORT</h4>
+            <p>Bybit Learn</p>
+            <p>Help Center</p>
+            <p>User Feedback</p>
+            <p>Submit a request</p>
+            <p>API Documentation</p>
+            <p>Trading Rules</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>ABOUT US</h4>
+            <p>About Bybit</p>
+            <p>Authenticity Check</p>
+            <p>Careers</p>
+            <p>Business Contacts</p>
+            <p>Blog</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2022 CryptoFI All Rights Reserved by <a href="#">ChatGPT_Champions_015</a></p>
+        <div class="social-icons">
+            <a href="#"><img src="./BuySell_Images/fb.png" alt="Facebook"></a>
+            <a href="#"><img src="./BuySell_Images/x.png" alt="X"></a>
+            <a href="#"><img src="./BuySell_Images/instgram.png" alt="Instagram"></a>
+            <a href="#"><img src="./BuySell_Images/linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+    </footer>
+  
+  
+
+<script src="./market-scripts/market.js"></script>
+
+</body>
+</html>

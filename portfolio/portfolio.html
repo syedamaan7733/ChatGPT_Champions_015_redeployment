@@ -1,0 +1,271 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="portfolio.css">  
+    <title>CryptoFi</title>  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+</head> 
+<div class="navbar">
+    <div class="logo">
+        <img src="criptofi.jpg" alt="logo">
+        <a href="#" class="active">CryptoFI</a>
+    </div>
+    <div class="menu">
+        <a href="/index.html">Homepage</a>
+        <a href="/pages/BuyCrypto.html">Buy / Sell Crypto</a>
+        <a href="/pages/Market/market-list.html">Markets</a>
+        <a style="background-color: #38a6ff;padding: 20px;" href="/portfolio/portfolio.html">Portfolio</a>
+        <a href="/blog/ft36_351day2/blog.html">Blog</a>
+    </div>
+    <a href="#" class="login-btn">Log In / Sign Up</a>
+</div> 
+<body >  
+    <div class="container">    
+
+        <div class="summary">  
+            <div class="total-value">  
+                <h2>Total Value</h2>  
+                <p>$55,314 <span class="increase">↑ +105.98%</span></p>  
+            </div>  
+            <div class="cost-basis">  
+                <h2>Cost Basis</h2>  
+                <p>$26,854</p>  
+            </div>  
+            <div class="unrealized-gains">  
+                <h2>Unrealized Gains</h2>  
+                <p>$28,459</p>  
+            </div>  
+        </div>  
+
+        <div class="chart">  
+            <canvas id="totalValueChart"></canvas>  
+        </div>  
+
+        <div class="date-range">  
+            <p>Jan 1, 2021 ~ Dec 31, 2021</p>  
+            <p>128 transactions</p>  
+        </div>  
+
+        <div class="breakdown">  
+            <h2>Breakdown</h2>  
+            <div class="breakdown-item">Received: $3,537</div>  
+            <div class="breakdown-item">Sent: $22,552</div>  
+            <div class="breakdown-item">Income: $2,042</div>  
+            <div class="breakdown-item">Expenses: $832</div>  
+            <div class="breakdown-item">Trading fees: $769</div>  
+            <div class="breakdown-item">Realized gains: $23,543</div>  
+            <div class="breakdown-item">Fiat on exchanges: $0</div>  
+        </div>  
+
+        <div class="holdings">  
+            <h2 id="hold">Holdings</h2>  
+            <canvas id="holdingsChart"></canvas>  
+            <table>  
+                <thead>  
+                    <tr>  
+                        <th>Asset</th>  
+                        <th>Balance</th>  
+                        <th>Cost (USD)</th>  
+                        <th>Market Value</th>  
+                        <th>ROI</th>  
+                        <th>24h</th>  
+                    </tr>  
+                </thead>  
+                <tbody>  
+                    <tr class="ab">  
+                        <td>BTC</td>  
+                        <td>2.5008</td>  
+                        <td>$5,823</td>  
+                        <td>$42,459</td>  
+                        <td id="cc">+629.2%</td>  
+                        <td><canvas class="sparkline" id="btcSparkline"></canvas></td>  
+                    </tr>  
+                    <tr class="ab">  
+                        <td>BCH</td>  
+                        <td>81.8200</td>  
+                        <td>$9,901</td>  
+                        <td>$8,641</td>  
+                        <td id="bc">-12.72%</td>  
+                        <td><canvas class="sparkline" id="bchSparkline"></canvas></td>  
+                    </tr>  
+                    <tr class="ab">  
+                        <td>ETH</td>  
+                        <td>3.3499</td>  
+                        <td>$10,480</td>  
+                        <td>$4,194</td>  
+                        <td id="bc">-59.98%</td>  
+                        <td><canvas class="sparkline" id="ethSparkline"></canvas></td>  
+                    </tr>  
+                </tbody>  
+            </table>  
+        </div>  
+    </div>  
+
+    <script>  
+        // Total value chart  
+        const ctx1 = document.getElementById('totalValueChart').getContext('2d');  
+        const totalValueChart = new Chart(ctx1, {  
+            type: 'line',  
+            data: {  
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],  
+                datasets: [{  
+                    label: 'Total Value',  
+                    data: [20000, 25000, 30000, 35000, 45000, 55000, 55314],  
+                    borderColor: 'rgba(75, 192, 192, 1)',  
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',  
+                    fill: true,  
+                }]  
+            },  
+            options: {  
+                responsive: true,  
+                scales: {  
+                    y: {  
+                        beginAtZero: true  
+                    }  
+                }  
+            }  
+        });  
+
+        // Holdings chart  
+        const ctx2 = document.getElementById('holdingsChart').getContext('2d');  
+        const holdingsChart = new Chart(ctx2, {  
+            type: 'bar',  
+            data: {  
+                labels: ['BTC', 'BCH', 'ETH'],  
+                datasets: [{  
+                    label: 'Market Value',  
+                    data: [42459, 8641, 4194],  
+                    backgroundColor: [  
+                        'rgba(255, 99, 132, 0.2)',  
+                        'rgba(54, 162, 235, 0.2)',  
+                        'rgba(255, 206, 86, 0.2)'  
+                    ],  
+                    borderColor: [  
+                        'rgba(255, 99, 132, 1)',  
+                        'rgba(54, 162, 235, 1)',  
+                        'rgba(255, 206, 86, 1)'  
+                    ],  
+                    borderWidth: 1  
+                }]  
+            },  
+            options: {  
+                responsive: true,  
+                scales: {  
+                    y: {  
+                        beginAtZero: true  
+                    }  
+                }  
+            }  
+        });  
+
+        // Sparkline charts  
+        function createSparkline(ctx, data) {  
+            return new Chart(ctx, {  
+                type: 'line',  
+                data: {  
+                    labels: Array(data.length).fill(''),  // empty labels for the sparkline  
+                    datasets: [{  
+                        data: data,  
+                        borderColor: 'rgba(75, 192, 192, 1)',  
+                        backgroundColor: 'rgba(75, 192, 192, 0)',  
+                        fill: true,  
+                    }]  
+                },  
+                options: {  
+                    responsive: false,  
+                    scales: {  
+                        x: {  
+                            display: false  // Hide X axis  
+                        },  
+                        y: {  
+                            display: false,  
+                            beginAtZero: false,  
+                            ticks: {  
+                                display: false // Hide Y axis ticks  
+                            }  
+                        }  
+                    },  
+                    elements: {  
+                        line: {  
+                            tension: 0.4 // Smooth the line  
+                        }  
+                    }  
+                }  
+            });  
+        }  
+
+        // Sample data for sparkline charts  
+        const btcData = [40000, 41000, 40500, 42000, 43000, 44400, 45000];  
+        const bchData = [900, 850, 875, 820, 800, 815, 845];  
+        const ethData = [4000, 3900, 3950, 4050, 4010, 3940, 3920];  
+
+        createSparkline(document.getElementById('btcSparkline').getContext('2d'), btcData);  
+        createSparkline(document.getElementById('bchSparkline').getContext('2d'), bchData);  
+        createSparkline(document.getElementById('ethSparkline').getContext('2d'), ethData);  
+
+    </script>  
+</body>  
+<footer>
+    <div class="footer-container">
+        <div class="footer-section company">
+            <img src="criptofi.jpg" alt="CryptoFI Logo">
+            <h3>CryptoFI</h3>
+            <p>Let's talk! <span>👍</span></p>
+            <p>+12 345 678 9101</p>
+            <p>hello.cryptoFI@gmail.com</p>
+            <p>Cecilia Chapman 711-2880 Nulla St. Bangalore <br>Bangalore 96522</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>PRODUCTS</h4>
+            <p>Spot</p>
+            <p>Inverse Perpetual</p>
+            <p>USDT Perpetual</p>
+            <p>Exchange</p>
+            <p>Launchpad</p>
+            <p>Binance Pay</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>SERVICES</h4>
+            <p>Buy Crypto</p>
+            <p>Markets</p>
+            <p>Tranding Fee</p>
+            <p>Affiliate Program</p>
+            <p>Referral Program</p>
+            <p>API</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>SUPPORT</h4>
+            <p>Bybit Learn</p>
+            <p>Help Center</p>
+            <p>User Feedback</p>
+            <p>Submit a request</p>
+            <p>API Documentation</p>
+            <p>Trading Rules</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>ABOUT US</h4>
+            <p>About Bybit</p>
+            <p>Authenticity Check</p>
+            <p>Careers</p>
+            <p>Business Contacts</p>
+            <p>Blog</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2022 CryptoFI All Rights Reserved by <a href="#">ChatGPT_Champions_015</a></p>
+        <div class="social-icons">
+            <a href="#"><img src="fb.png" alt="Facebook"></a>
+            <a href="#"><img src="x.png" alt="X"></a>
+            <a href="#"><img src="instgram.png" alt="Instagram"></a>
+            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+</footer>
+</html>
